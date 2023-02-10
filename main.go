@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	musicTracker.GetArtist("Queen")
+	musicTracker.GetAllArtists()
 }
