@@ -19,7 +19,7 @@ func main() {
 	}
 }
 func OpenFile(w http.ResponseWriter, r *http.Request, filename string) {
-	templates, err := template.ParseFiles("./templates/" + filename + ".html")
+	templates, err := template.ParseFiles("../static/" + filename + ".html")
 	if err != nil {
 		log.Fatal(err)
 	}
