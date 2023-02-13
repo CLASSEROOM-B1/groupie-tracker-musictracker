@@ -23,3 +23,12 @@ type ConcertDates struct {
 type Relations struct {
 	DatesLocations map[string][]string
 }
+
+type ArtistLight struct {
+	Id           int
+	Image        string
+	Name         string
+	Members      []string
+	CreationDate int
+	FirstAlbum   string
+}
