@@ -6,30 +6,6 @@ import (
 	"strconv"
 )
 
-type Artist struct {
-	Id           int
-	Image        string
-	Name         string
-	Members      []string
-	CreationDate int
-	FirstAlbum   string
-	Locations    Locations
-	ConcertDates ConcertDates
-	Relations    Relations
-}
-
-type Locations struct {
-	Locations []string
-}
-
-type ConcertDates struct {
-	Dates []string
-}
-
-type Relations struct {
-	DatesLocations map[string][]string
-}
-
 func GetArtist(name string) Artist {
 	var artistsList []Artist
 	json.Unmarshal(GetData("groupietrackers.herokuapp.com/api/artists"), &artistsList)
