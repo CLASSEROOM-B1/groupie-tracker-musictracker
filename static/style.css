@@ -1,0 +1,38 @@
+
+body {
+position: absolute;
+Fill: Solid #14AE5C;
+width: 1512px;
+height: 266px;
+left: 0px;
+top: 19px;
+
+}
+accueil{
+    background: #333333;
+}
+
+box {
+    position: absolute;
+width: 422.23px;
+height: 201.67px;
+left: 78.41px;
+top: 318.66px;
+}
+shape {
+position: absolute;
+width: 423px;
+height: 196px;
+left: 78px;
+top: 592px;
+}
+
+footer{
+    background-color: #333333;
+
+}
+
+*{
+	margin: 0;
+    padding: 0;
+}

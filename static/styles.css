@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(64, 243, 109);
+    background-color: rgb(192, 27, 36);
 
 }
 *{
@@ -33,11 +33,43 @@ header{
     left: 50%;
 }
 
-.box {
+ul{
     display: flex;
+   justify-content: space-around;
+}
 
+li{
+    list-style-type: none;
+    width: 20%;
+    height: 300px;
+    left: 78px;
+    top: 470px;
+    background: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.box,
+.box2{
+    padding: 15px;
+}
+
+/* .box {
+    align-items: center;
+    justify-content: center;
     flex-wrap: nowrap;
 }
+
+.box2{
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+} */
+
+
 
 /* li{
     list-style-type: none;
