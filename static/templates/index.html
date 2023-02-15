@@ -20,12 +20,23 @@
         
     </header>
     <main>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+            </style>
         <div class="box">
             <ul>
                 <li>
-                    <a href="Element 1">Element 1</a>
+                    <a href="">
+                        {{range .}} 
+                            <p id="id">{{ .Name }}</p>
+                            <img id="img" src="{{.Image}}" alt="href">
+                            <!-- {{range .Members}} 
+                            <p id="mem">{{.}}</p>
+                            {{end}} -->
+                        {{end}} 
+                    </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="Element 2">Element 2</a>
                 </li>
                 <li>
@@ -33,10 +44,10 @@
                 </li>
                 <li>
                     <a href="Element 4">Element 4</a>
-                </li>
+                </li> -->
             </ul>
             
         </div>
-          
+    </main>  
 </body>
 </html> 
