@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Tracker</title>
-    <link rel="stylesheet" href="/static/mainpage.css">
+    <link rel="stylesheet" href="/static/artist.css">
     <link rel="shortcut icon" href="/static/imgs/logo.ico" type="image/x-icon">
 </head>
-<header>
+</header>
 <div class="nav-container">
     <span class="nav-tab" href="#tab-Artist">Artist</span>
     <span class="nav-tab" href="#tab-Music">Music</span>
@@ -54,6 +54,25 @@
             <input type="text" name="Search" placeholder="Enter your research">
         </form>
     </section>
+    <section class="slider" id="tab-Artists">
+        <!-- <h1>Artists</h1> -->
+    </section>
+    <div class="fullcontainer">
+        {{range .}}
+        <div class="main">
+            <p> {{ .Name }} </p>
+            <img src="{{.Image}}" alt="">
+            {{range .Members}}
+            <p> {{.}} </p>
+            {{end}}
+        </div>
+            {{end}}
+    </div>
+    </div>
+    </div>
+    </div>
+    </form>
+    </div>
 </body>
 
 </html>
