@@ -8,7 +8,6 @@ import (
 type Artist struct {
 	Name         string
 	Members      []string
-	Location     string
 	FirstAlbum   string
 	CreationDate string
 }
@@ -23,7 +22,6 @@ func searchArtists(query string, artists []Artist) []Artist {
 	for _, artist := range artists {
 		if strings.Contains(strings.ToLower(artist.Name), query) ||
 			contains(artist.Members, query) ||
-			strings.Contains(strings.ToLower(artist.Location), query) ||
 			strings.Contains(strings.ToLower(artist.FirstAlbum), query) ||
 			strings.Contains(strings.ToLower(artist.CreationDate), query) {
 			results = append(results, artist)
@@ -46,14 +44,12 @@ func artist() {
 		{
 			Name:         "Queen",
 			Members:      []string{"Freddie Mercury", "John Deacon", "Brian May", "Roger Taylor"},
-			Location:     "London, England",
 			FirstAlbum:   "Queen",
 			CreationDate: "1970",
 		},
 		{
 			Name:         "The Beatles",
 			Members:      []string{"John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"},
-			Location:     "Liverpool, England",
 			FirstAlbum:   "Please Please Me",
 			CreationDate: "1960",
 		},

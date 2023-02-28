@@ -4,6 +4,6 @@ import (
 	"musicTracker/musicTracker"
 )
 
-func mainn() {
+func main() {
 	musicTracker.GetAllArtists()
 }
