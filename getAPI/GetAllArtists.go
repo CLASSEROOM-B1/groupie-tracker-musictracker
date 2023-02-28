@@ -1,4 +1,4 @@
-package musicTracker
+package getAPI
 
 import (
 	"encoding/json"

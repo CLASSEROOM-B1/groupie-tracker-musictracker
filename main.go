@@ -1,9 +1,9 @@
 package main
 
 import (
-	"musicTracker/musicTracker"
+	"musicTracker/getAPI"
 )
 
 func main() {
-	musicTracker.GetAllArtists()
+	getAPI.GetAllArtists()
 }

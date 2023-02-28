@@ -1,4 +1,4 @@
-package musicTracker
+package getAPI
 
 type Artist struct {
 	Id           int

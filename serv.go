@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"log"
-	"musicTracker/musicTracker"
+	"musicTracker/getAPI"
 	"net/http"
 )
 
@@ -13,7 +13,7 @@ func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		parsedTemplate, _ := template.ParseFiles("./static/templates/MainPage.html")
-		Artists := musicTracker.GetAllArtists()
+		Artists := getAPI.GetAllArtists()
 		err := parsedTemplate.Execute(w, Artists)
 		if err != nil {
 			log.Println("Error executing template :", err)
