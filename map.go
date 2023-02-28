@@ -1,9 +1,10 @@
-package main
+package musicTracker
 
 import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"strings"
 )
@@ -32,24 +33,21 @@ func localisation() {
 		// Make the API request
 		response, err := http.Get("https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=" + apiKey)
 		if err != nil {
-			fmt.Println("Error making API request:", err)
-			continue
+			log.Fatal(err)
 		}
 		defer response.Body.Close()
 
 		// Read the API response
 		body, err := ioutil.ReadAll(response.Body)
 		if err != nil {
-			fmt.Println("Error reading API response:", err)
-			continue
+			log.Fatal(err)
 		}
 
 		// Unmarshal the JSON response into a map
 		var data map[string]interface{}
 		err = json.Unmarshal(body, &data)
 		if err != nil {
-			fmt.Println("Error unmarshaling JSON:", err)
-			continue
+			log.Fatal(err)
 		}
 
 		// Extract the latitude and longitude from the API response

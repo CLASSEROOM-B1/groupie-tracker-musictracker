@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApiGetimmage</title>
-    <link rel="stylesheet" href="../static/GetArt.css">
-    <!-- <script src="../GetArts.js"></script> -->
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ApiGetimmage</title>
+        <link rel="stylesheet" href="../static/GetArt.css">
+        <!-- <script src="../GetArts.js"></script> -->
+    </head>
+    <body>
     
-    <!-- <div id="container"></div>
+        <!-- <div id="container"></div>
 
-    <script>
-      const elements = [ Range.Artists];
+        <script>
+        const elements = [ Range.Artists];
   
-      const container = document.getElementById("container");
+        const container = document.getElementById("container");
   
-      for (let i = 0; i < elements.length; i++) {
-        const item = document.createElement("div");
-        item.classList.add("item");
-        item.textContent = elements[i];
-        container.appendChild(item);
-      }
-    </script> -->
-    {{range .}} 
-    <div class="mem" id="{{.Id}}">
-      <div class="len">
-        <img class="img" src="{{.Image}}" alt="href"> 
-        <p>{{.Name}}</p>
-      </div>
-    </div>
-    <!-- {{range .Members}} 
-    <p>{{.}}</p>
-    {{end}} -->
-    {{end}} 
-    <!-- <script src="../GetArts.js"></script> -->
-</body>
+        for (let i = 0; i < elements.length; i++) {
+            const item = document.createElement("div");
+            item.classList.add("item");
+            item.textContent = elements[i];
+            container.appendChild(item);
+        }
+        </script> -->
+        {{range .}}
+        <div class="mem" id="{{.Id}}">
+            <div class="len">
+                <img class="img" src="{{.Image}}" alt="href">
+                <p>{{.Name}}</p>
+            </div>
+        </div>
+        <!-- {{range .Members}}
+        <p>{{.}}</p>
+        {{end}} -->
+        {{end}}
+        <!-- <script src="../GetArts.js"></script> -->
+    </body>
 </html>

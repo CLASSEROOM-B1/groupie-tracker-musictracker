@@ -1,10 +1,10 @@
-package main
+package musicTracker
 
 import (
 	"fmt"
 	"html/template"
 	"log"
-	"musicTracker/getAPI"
+	musicTracker "musicTracker/getAPI"
 	"net/http"
 )
 
@@ -13,17 +13,16 @@ func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		parsedTemplate, _ := template.ParseFiles("./static/templates/MainPage.html")
-		Artists := getAPI.GetAllArtists()
+		Artists := musicTracker.GetAllArtists()
 		err := parsedTemplate.Execute(w, Artists)
 		if err != nil {
-			log.Println("Error executing template :", err)
-			return
+			log.Fatal(err)
 		}
 	})
 
 	fmt.Println("Server is running on localhost:8080")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 }

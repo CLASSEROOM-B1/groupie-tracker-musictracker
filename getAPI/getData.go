@@ -1,4 +1,4 @@
-package getAPI
+package musicTracker
 
 import (
 	"io/ioutil"

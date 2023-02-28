@@ -1,25 +1,17 @@
-package main
+package musicTracker
 
 import (
 	"fmt"
 	"strings"
 )
 
-type Artist struct {
-	Name         string
-	Members      []string
-	Location     string
-	FirstAlbum   string
-	CreationDate string
-}
-
-func (a Artist) String() string {
+func (a ArtistLight) String() string {
 	return a.Name
 }
 
-func searchArtists(query string, artists []Artist) []Artist {
+func searchArtists(query string, artists []ArtistLight) []ArtistLight {
 	query = strings.ToLower(query)
-	results := []Artist{}
+	results := []ArtistLight{}
 	for _, artist := range artists {
 		if strings.Contains(strings.ToLower(artist.Name), query) ||
 			contains(artist.Members, query) ||

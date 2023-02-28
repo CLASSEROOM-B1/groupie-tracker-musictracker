@@ -1,19 +1,20 @@
-package getAPI
+package musicTracker
 
 import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"musicTracker"
 	"strconv"
 )
 
-func GetArtist(name string) Artist {
-	var artistsList []Artist
+func GetArtist(name string) musicTracker.Artist {
+	var artistsList []musicTracker.Artist
 	err := json.Unmarshal(GetData("groupietrackers.herokuapp.com/api/artists"), &artistsList)
 	if err != nil {
 		log.Fatal(err)
 	}
-	var artist Artist
+	var artist musicTracker.Artist
 	for i := 0; i < len(artistsList); i++ {
 		if artistsList[i].Name == name {
 			artist = artistsList[i]

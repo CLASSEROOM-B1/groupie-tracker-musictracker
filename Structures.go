@@ -1,4 +1,4 @@
-package getAPI
+package musicTracker
 
 type Artist struct {
 	Id           int
@@ -25,10 +25,8 @@ type Relations struct {
 }
 
 type ArtistLight struct {
-	Id           int
 	Image        string
 	Name         string
 	Members      []string
 	CreationDate int
-	FirstAlbum   string
 }
