@@ -25,6 +25,7 @@ type Relations struct {
 }
 
 type ArtistLight struct {
+	Id              int
 	Image           string
 	Name            string
 	Members         []string

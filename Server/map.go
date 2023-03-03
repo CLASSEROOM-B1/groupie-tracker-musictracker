@@ -3,6 +3,7 @@ package musicTracker
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -17,7 +18,7 @@ type Location struct {
 
 func localisation() {
 	// Your API key for the Google Maps Geocoding API
-	apiKey := "AIzaSyDsqSDIuvZC3PDglfoQkLQO8_As00il0D0"
+	apiKey := "AIzaSyD4OnjwP-3hpqykIROvV96HobEWtHJPxVA"
 
 	// The list of concert locations for a specific artist or band
 	concertLocations := []string{"Mayence, Allemagne", "Paris, France", "Londres, Royaume-Uni"}
@@ -35,7 +36,12 @@ func localisation() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		defer response.Body.Close()
+		defer func(Body io.ReadCloser) {
+			err := Body.Close()
+			if err != nil {
+				log.Fatal(err)
+			}
+		}(response.Body)
 
 		// Read the API response
 		body, err := ioutil.ReadAll(response.Body)
