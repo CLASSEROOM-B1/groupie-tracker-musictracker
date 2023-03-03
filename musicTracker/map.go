@@ -1,4 +1,4 @@
-package main
+package musicTracker
 
 import (
 	"encoding/json"

@@ -1,4 +1,4 @@
-package main
+package musicTracker
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-func main() {
+func Server() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
