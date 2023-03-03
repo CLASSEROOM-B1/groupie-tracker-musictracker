@@ -16,7 +16,7 @@ type Location struct {
 
 func localisation() {
 	// Your API key for the Google Maps Geocoding API
-	apiKey := "AIzaSyDsqSDIuvZC3PDglfoQkLQO8_As00il0D0"
+	apiKey := "AIzaSyD4OnjwP-3hpqykIROvV96HobEWtHJPxVA"
 
 	// The list of concert locations for a specific artist or band
 	concertLocations := []string{"Mayence, Allemagne", "Paris, France", "Londres, Royaume-Uni"}
