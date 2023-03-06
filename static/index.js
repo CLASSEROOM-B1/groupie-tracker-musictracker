@@ -1,87 +1,56 @@
-let map;
-let marker;
-let geocoder;
-let responseDiv;
-let response;
-
 function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 8,
-    center: { lat: -34.397, lng: 150.644 },
-    mapTypeControl: false,
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 10,
+    center: { lat: -33.9, lng: 151.2 },
   });
-  geocoder = new google.maps.Geocoder();
-
-  const inputText = document.createElement("input");
-
-  inputText.type = "text";
-  inputText.placeholder = "Enter a location";
-
-  const submitButton = document.createElement("input");
-
-  submitButton.type = "button";
-  submitButton.value = "Geocode";
-  submitButton.classList.add("button", "button-primary");
-
-  const clearButton = document.createElement("input");
-
-  clearButton.type = "button";
-  clearButton.value = "Clear";
-  clearButton.classList.add("button", "button-secondary");
-  response = document.createElement("pre");
-  response.id = "response";
-  response.innerText = "";
-  responseDiv = document.createElement("div");
-  responseDiv.id = "response-container";
-  responseDiv.appendChild(response);
-
-  const instructionsElement = document.createElement("p");
-
-  instructionsElement.id = "instructions";
-  instructionsElement.innerHTML =
-    "<strong>Instructions</strong>: Enter an address in the textbox to geocode or click on the map to reverse geocode.";
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputText);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
-  map.controls[google.maps.ControlPosition.LEFT_TOP].push(
-    instructionsElement
-  );
-  map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
-  marker = new google.maps.Marker({
-    map,
-  });
-  map.addListener("click", (e) => {
-    geocode({ location: e.latLng });
-  });
-  submitButton.addEventListener("click", () =>
-    geocode({ address: inputText.value })
-  );
-  clearButton.addEventListener("click", () => {
-    clear();
-  });
-  clear();
-}
-
-function clear() {
-  marker.setMap(null);
-}
-
-function geocode(request) {
-  clear();
-  geocoder
-    .geocode(request)
-    .then((result) => {
-      const { results } = result;
-
-      map.setCenter(results[0].geometry.location);
-      marker.setPosition(results[0].geometry.location);
-      marker.setMap(map);
-      response.innerText = JSON.stringify(result, null, 2);
-      return results;
-    })
-    .catch((e) => {
-      alert("Geocode was not successful for the following reason: " + e);
+  
+  setMarkers(map);
+  }
+  
+  // Data for the markers consisting of a name, a LatLng and a zIndex for the
+  // order in which these markers should display on top of each other.
+  const beaches = [
+  ["Bondi Beach", -33.890542, 151.274856, 4],
+  ["Coogee Beach", -33.923036, 151.259052, 5],
+  ["Cronulla Beach", -34.028249, 151.157507, 3],
+  ["Manly Beach", -33.80010128657071, 151.28747820854187, 2],
+  ["Maroubra Beach", -33.950198, 151.259302, 1],
+  ];
+  
+  function setMarkers(map) {
+  // Adds markers to the map.
+  // Marker sizes are expressed as a Size of X,Y where the origin of the image
+  // (0,0) is located in the top left of the image.
+  // Origins, anchor positions and coordinates of the marker increase in the X
+  // direction to the right and in the Y direction down.
+  const image = {
+    url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    // This marker is 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(20, 32),
+    // The origin for this image is (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // The anchor for this image is the base of the flagpole at (0, 32).
+    anchor: new google.maps.Point(0, 32),
+  };
+  // Shapes define the clickable region of the icon. The type defines an HTML
+  // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+  // The final coordinate closes the poly by connecting to the first coordinate.
+  const shape = {
+    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: "poly",
+  };
+  
+  for (let i = 0; i < beaches.length; i++) {
+    const beach = beaches[i];
+  
+    new google.maps.Marker({
+      position: { lat: beach[1], lng: beach[2] },
+      map,
+      icon: image,
+      shape: shape,
+      title: beach[0],
+      zIndex: beach[3],
     });
-}
-
-window.initMap = initMap;
+  }
+  }
+  window.initMap = initMap;

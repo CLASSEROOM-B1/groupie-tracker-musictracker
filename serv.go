@@ -1,4 +1,4 @@
-package musicTracker
+package main
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-func Server() {
+func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
@@ -20,7 +20,6 @@ func Server() {
 			return
 		}
 	})
-
 	fmt.Println("Server is running on localhost:8080")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
