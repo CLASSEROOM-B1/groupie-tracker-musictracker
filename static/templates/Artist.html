@@ -11,10 +11,9 @@
 </head>
 <header>
 <div class="nav-container">
-    <span class="nav-tab" href="#tab-Home">Home</span>
-    <span class="nav-tab" href="#tab-Artist">Artist</span>
-    <span class="nav-tab" href="#tab-Map">Map</span>
-    <span class="nav-tab" href="#tab-Contact">Contact</span>
+    <span class="nav-tab" href="www.localhost:8080/static/MainPage.html">Home</span>
+    <span class="nav-tab" href="www.localhost:8080/static/Artist.html">Artist</span>
+    <span class="nav-tab" href="www.localhost:8080/static/map.html">Map</span>
 </div>
 </header>
 
@@ -49,6 +48,13 @@
             <span class="m">E</span>
             <span class="m">R</span>
         </h3>
+        <sectio.nav
+        .nav-container
+        a.nav-tab(href="#tab-Home") Home
+        a.nav-tab(href="#tab-Artist") Artist
+        a.nav-tab(href="#tab-Map") Map
+    </section>
+     
         <form action="/Login" method="POST">
             <input type="text" name="Search" placeholder="Enter your research">
         </form>

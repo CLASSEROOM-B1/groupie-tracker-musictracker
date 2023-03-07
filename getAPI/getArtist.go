@@ -2,7 +2,6 @@ package musicTracker
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"strconv"
 )
@@ -34,6 +33,5 @@ func GetArtist(name string) Artist {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(artist)
 	return artist
 }

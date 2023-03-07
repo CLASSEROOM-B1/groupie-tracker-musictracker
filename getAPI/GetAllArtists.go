@@ -2,7 +2,6 @@ package musicTracker
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"strconv"
 )
@@ -19,6 +18,5 @@ func GetAllArtists() []ArtistLight {
 			log.Fatal(err)
 		}
 	}
-	fmt.Println(artistsList)
 	return artistsList
 }
