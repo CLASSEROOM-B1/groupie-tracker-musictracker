@@ -1,0 +1,38 @@
+body {
+    background:#537c53;
+    margin:0;
+}
+
+h1{
+    font-family: Roboto;
+    font-size: 45px;
+    text-align:center;    
+    color: #000000;
+}
+
+h2{
+    font-family: Roboto;
+    font-size: 30px;
+    text-align:center;    
+    color: #000000;
+}
+
+h3 {
+    font-family: Roboto;
+    font-size: 20px;
+    text-align:center;    
+    color: #f5f0e1;
+    
+}   
+
+.oneGroup {
+    padding-top:5px;
+    padding-bottom:5px;
+    background-color: #537c53;
+    text-align: center;
+    width:100%;
+}
+
+.oneGroup:hover{
+    background-color: #537c53;
+}

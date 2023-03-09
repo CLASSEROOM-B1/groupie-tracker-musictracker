@@ -1,0 +1,78 @@
+#map {
+  z-index: 0;
+  display: flex;
+  float: top;
+  width: 80%;
+  height: 400px;
+  margin-left: 5%;
+}
+
+#head p{
+  text-align: center;
+  font-size: 80px;
+  color: black;
+}
+
+p {
+  text-align: center;
+  font-size: 80px;
+  color: black;
+}
+
+body {
+  background-color: #537c53;
+  color: black;
+}
+#city {
+  float: top;
+  /* margin-bottom: 10%; */
+  border-radius: 20%;
+  height: 50px;
+  width: 10%;
+  background : #f5f0e1;
+  color: black;
+  margin-left: 45%;
+}
+#head {
+  float: top;
+  width: 100%;
+  margin-top: -5%;
+}
+
+#villes_artistes {
+  
+  font-size: 200%;
+  color: black;
+  height: 400px;
+  width: 100%;
+  border: black solid 1px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 150px);
+  justify-content: center;
+  
+}
+#villes_artistes p {
+  z-index: 0;
+  width: 100%;
+  color: black;
+  font-size: 100%;
+}
+#city_content {
+  
+  text-align: center;
+  width: 40%;
+
+}
+
+#all_body {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#title_map {
+  width: 60%;
+  text-align: center;
+}

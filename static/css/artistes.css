@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #48654f;
+  }
+  h1 {
+    text-align:center;
+}
+
+.options {
+    width:25%;
+    height:100%;
+
+    color:#f5f0e1;
+    text-align: center;
+
+}
+
+form{
+    background: color 48654f;;
+
+}
+
+.pageArtistes {
+    float: left;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
+
+.years{
+margin-top:0;
+margin-bottom: 15px;
+}
+
+.groups{
+    
+    display: grid;
+    float: left;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width:70%;
+    height:auto;
+    
+}
+
+.oneGroup {
+    width:auto;
+
+}
+
+.oneGroup p {
+    margin:2px;
+}
+.oneGroup h3 {
+    margin:5px;
+}
+
+input[type=range] {
+
+    cursor:-webkit-grabbing ;
+}
+datalist {
+    display:flex;
+}
+
+button:hover{
+
+    color:#2c4c2e;
+}
+  

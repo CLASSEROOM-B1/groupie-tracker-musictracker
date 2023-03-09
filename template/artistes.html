@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/img/logo.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/artistes.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>MUSIC TRACKER</title>
+</head>
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPIE TRACKER</title>
+</head>
+
+<body>
+    {{template "header"}}
+
+    <main>
+    <h1>Artistes</h1>
+    
+    <div class="pageArtistes">
+    <div  class="options">
+        
+        <div>
+            <form action="/artistes?page=1" id="formFilter" method="POST">
+                <hr>
+            
+                <h3>Sélectionnez les filtres : </h3>
+                <hr>
+                <div>
+                    <div class="filter">
+                        <label class="filter-title" for="startCD">Par date de création</label>
+                        <div>
+                            <input id="startCD" type="range" min="1958" max="2015" step="1" name="startCD" value={{.RangeCreationDate.Start}}>
+                            <input id="endCD" type="range" min="1958" max="2015" step="1" name="endCD" value="{{.RangeCreationDate.End}}">
+                        </div>
+                        <p class="years">
+                            De <span id="fromCD"></span> à <span id="toCD"></span>
+                        </p>
+                    </div>
+                    <hr>
+                    
+                    <div class="filter">
+                        <label for="startCD">Par date de sortie du premier album </label>
+                        <div>
+                            <input id="startFA" type="range" min="1963" max="2018" step="1" name="startFA" value={{.RangeFirstAlbum.Start}}>
+                            <input id="endFA" type="range" min="1963" max="2018" step="1" name="endFA" value="{{.RangeFirstAlbum.End}}">
+                            <p class="years">
+                                De <span id="fromFA"></span> à <span id="toFA"></span>
+                            </p>
+                        </div>
+                        <hr>
+                    </div>
+                        <label>Nombre de membres :</label>
+                        <div class="box">
+                        {{range .CheckboxMember}}
+                        <input {{.Checked}} name="checkbox-{{.Number}}" class="checkbox" type="checkbox" value="{{.Number}}">
+                        <span class="check"></span>
+                        <label for="{{.Number}}">{{.Number}}</label>
+                        {{end}}
+                        </div>
+                        <hr>
+                   
+
+                </div>
+
+            </form>
+            
+        </div>
+        <div class="pagination">
+            {{ range .NumberPages}}
+            <button onclick="goToPage('{{.}}')" name="page" value="{{.}}">{{.}}</button>
+            {{end}}
+        </div>
+
+        </div>
+        
+ 
+        
+        
+        <div class="groups">
+            {{if .Groups}}
+            {{range .Groups}}
+            <div class="oneGroup">
+                <img src="{{ .Image}}" alt="Image du groupe {{ .Name}}">
+                <h2> {{ .Name}}</h2>
+                <h3>Membres</h3>
+                
+                <p> |
+                    {{range $member := .Members}}
+                    <span> {{$member}} |</span>
+                    {{end}}
+                </p>
+                <h3>Date de création</h3>
+                <p>{{ .CreationDate}}</p>
+                <h3>Date du premier album</h3>
+                <p>{{ .FirstAlbum}}</p>
+                <a href="/events?oneGroup={{.ID}}"><button>Voir les concerts.</button></a>
+            </div>
+            {{end}}
+            {{else}}
+            <p>Pas d'artistes trouvés avec les filtres.</p>
+            {{end}}
+            
+            
+            
+        </div>
+    </div>
+    <script src="../static/js/artistes.js"></script> 
+</main>
+</body>
+</html>

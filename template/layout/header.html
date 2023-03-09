@@ -1,28 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+{{define "header"}}
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Tracker</title>
-    <link rel="stylesheet" href="/static/mainpage.css">
-    <link rel="shortcut icon" href="/static/imgs/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/img/logo.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>MUSIC TRACKER</title>
+    <link rel="stylesheet" href="../../static/css/header.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
 </head>
-</header>
-<div class="nav-container">
-    <span class="nav-tab" href="#tab-Artist">Artist</span>
-    <span class="nav-tab" href="#tab-Map">Map</span>
-    <span class="nav-tab" href="#tab-Home">Home</span>
-</div>
-</header>
-
-<body>
-
+<header>
+    <div>
+        <a href='/'><button id="boutons" type="button" onclick=""> Home</button></a>
+        <a href='/artistes'><button id="boutons" type="button" onclick=""> 🎸 Artistes</button></a>
+        <a href='/locations'><button id="boutons" type="button" onclick=""> 🗺️ Maps</button></a>
+        <a href='/events'><button id="boutons" type="button" onclick=""> 🎼 Concerts </button></a>
+    </div>
     <section class="nav">
         <h1> 🎶 Music Tracker 🎶 </h1>
         <h3 class="span loader">
-
             <span class="m">W</span>
             <span class="m">E</span>
             <span class="m">L</span>
@@ -48,11 +45,6 @@
             <span class="m">E</span>
             <span class="m">R</span>
         </h3>
-
-            <form action="/Login" method="POST">
-                <input type="text" name="Search" placeholder="Enter your research">
-            </form>
     </section>
-</body>
-
-</html>
+</header>
+{{end}}
