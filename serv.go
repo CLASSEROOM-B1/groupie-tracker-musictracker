@@ -12,7 +12,7 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
-		parsedTemplate, _ := template.ParseFiles("./static/templates/map.html")
+		parsedTemplate, _ := template.ParseFiles("./static/templates/Artist.html")
 		Artists := musicTracker.GetAllArtists()
 		err := parsedTemplate.Execute(w, Artists)
 		if err != nil {

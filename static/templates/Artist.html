@@ -48,19 +48,11 @@
             <span class="m">E</span>
             <span class="m">R</span>
         </h3>
-        <sectio.nav
-        .nav-container
-        a.nav-tab(href="#tab-Home") Home
-        a.nav-tab(href="#tab-Artist") Artist
-        a.nav-tab(href="#tab-Map") Map
-    </section>
-     
         <form action="/Login" method="POST">
             <input type="text" name="Search" placeholder="Enter your research">
         </form>
     </section>
     <section class="slider" id="tab-Artists">
-        <!-- <h1>Artists</h1> -->
     </section>
     <div class="fullcontainer">
         {{range .}}
@@ -71,12 +63,8 @@
             <p> {{.}} </p>
             {{end}}
         </div>
-            {{end}}
+        {{end}}
     </div>
-    </div>
-    </div>
-    </div>
-    </form>
     </div>
 </body>
 

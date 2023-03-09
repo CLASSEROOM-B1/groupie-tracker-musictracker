@@ -312,3 +312,59 @@ input {
   border-color: rgb(75, 134, 60);
   border: 2px solid rgb(42, 255, 4);
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 90vw;
+  max-width: 1000px;
+  height: 90vw;
+  max-height: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-bottom: 10px;
+ 
+}
+
+.filter-inputs {
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+ .cb {
+   margin-bottom: 10px;
+  font-size: 22px;
+ }
+
+
+
+
+ button {
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+  border: 1px solid white;
+  height: 34px;
+  width: 130px;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 10px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
