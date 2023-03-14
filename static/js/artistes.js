@@ -4,9 +4,9 @@ function formSubmit(){
     form.submit()
 }
 
-// Affichage années Creation Date  + ajout de l'évènement formSubmit
+// Affichage années Creation Date + ajout de l'évènement formSubmit
 
-// Récupération Début du filtre Création Date
+// Récupération Début du filtre Creation Date
 let startCD = document.getElementById("startCD")
 let fromCD = document.getElementById("fromCD")
 
@@ -31,9 +31,7 @@ endCD.addEventListener('input', function func(e){
 })
 
 
-// Affichage année First Album + ajout de l'évènement formSubmit
-
-// Récupération Début du filtre First Album
+// Affichage année First Album + ajout de l'évènement formSubmit + récupération Début du filtre First Album
 let startFA = document.getElementById("startFA") 
 let fromFA = document.getElementById("fromFA")
 fromFA.innerHTML = startFA.value
@@ -44,7 +42,7 @@ startFA.addEventListener('input', function func(e){
     fromFA.innerHTML = e.target.value
 })
 
-// Récupération FIN du filtre First Album
+// Récupération fin du filtre First Album
 let endFA = document.getElementById("endFA") 
 let toFA = document.getElementById("toFA")
 toFA.innerHTML = endFA.value

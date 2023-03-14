@@ -19,7 +19,7 @@ function initMap(){
             map: map,
         });
         
-        const geocoder = new google.maps.Geocoder(); // appel de la fonction de Google Maps
+        const geocoder = new google.maps.Geocoder(); // Appel de la fonction de Google Maps
         codeAddress(geocoder, map, marker);
         
     })
@@ -30,17 +30,17 @@ function codeAddress(geocoder, resultsMap, marker) {
     
     const address = document.querySelector('select') 
     
-    address.addEventListener("change", async function(event){  // recupération des valeurs 
+    address.addEventListener("change", async function(event){  // Recupération des valeurs 
         
         let addressValue = event.target.value
         
-        // récupérer les données des locations de l'API avec un await pour éviter toute les requetes en même temps
+        // Récupérer les données des locations de l'API avec un await pour éviter toute les requetes en même temps
         let res = await fetch(`/cities?groups=${addressValue}`)
         let cities = await res.json()
         console.log(cities)
         
 
-        // affichage des concerts
+        // Affichage des concerts
         const divCities = document.getElementById("villes_artistes")
         while (divCities.firstChild){
             divCities.removeChild(divCities.firstChild);
@@ -60,12 +60,12 @@ function codeAddress(geocoder, resultsMap, marker) {
         for (let i = 0; i < cities.length; i ++) {
             console.log(cities.length)
             
-            geocoder.geocode({ address: cities[i]}, (results, status) => { // utilisation de geocoding avec les valeur récupérer (cities)
+            geocoder.geocode({ address: cities[i]}, (results, status) => { // Utilisation de geocoding avec les valeur récupérer (cities)
                 
                 if (status === "OK") {
-                    resultsMap.setCenter(results[0].geometry.location); // placement de la position de la requete demandée
+                    resultsMap.setCenter(results[0].geometry.location); // Placement de la position de la requete demandée
                     
-                    marker.setPosition(results[0].geometry.location) // placement du marqueur non fonctionnel
+                    marker.setPosition(results[0].geometry.location) // Placement du marqueur non fonctionnel
                     
                 } else {
                     alert("Error: " + status);

@@ -12,17 +12,11 @@
     <title>MUSIC TRACKER</title>
 </head>
 
-
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GROUPIE TRACKER</title>
-</head>
-
 <body>
     {{template "header"}}
 
     <main>
-    <h1>Artistes</h1>
+    <h1>Artists</h1>
     
     <div class="pageArtistes">
     <div  class="options">
@@ -31,11 +25,11 @@
             <form action="/artistes?page=1" id="formFilter" method="POST">
                 <hr>
             
-                <h3>Sélectionnez les filtres : </h3>
+                <h3>Select your filters : </h3>
                 <hr>
                 <div>
                     <div class="filter">
-                        <label class="filter-title" for="startCD">Par date de création</label>
+                        <label class="filter-title" for="startCD">Creation date</label>
                         <div>
                             <input id="startCD" type="range" min="1958" max="2015" step="1" name="startCD" value={{.RangeCreationDate.Start}}>
                             <input id="endCD" type="range" min="1958" max="2015" step="1" name="endCD" value="{{.RangeCreationDate.End}}">
@@ -47,7 +41,7 @@
                     <hr>
                     
                     <div class="filter">
-                        <label for="startCD">Par date de sortie du premier album </label>
+                        <label for="startCD">First album</label>
                         <div>
                             <input id="startFA" type="range" min="1963" max="2018" step="1" name="startFA" value={{.RangeFirstAlbum.Start}}>
                             <input id="endFA" type="range" min="1963" max="2018" step="1" name="endFA" value="{{.RangeFirstAlbum.End}}">
@@ -57,7 +51,7 @@
                         </div>
                         <hr>
                     </div>
-                        <label>Nombre de membres :</label>
+                        <label>Number of Member</label>
                         <div class="box">
                         {{range .CheckboxMember}}
                         <input {{.Checked}} name="checkbox-{{.Number}}" class="checkbox" type="checkbox" value="{{.Number}}">
@@ -90,22 +84,22 @@
             <div class="oneGroup">
                 <img src="{{ .Image}}" alt="Image du groupe {{ .Name}}">
                 <h2> {{ .Name}}</h2>
-                <h3>Membres</h3>
+                <h3>Members</h3>
                 
                 <p> |
                     {{range $member := .Members}}
                     <span> {{$member}} |</span>
                     {{end}}
                 </p>
-                <h3>Date de création</h3>
+                <h3>Creation Date</h3>
                 <p>{{ .CreationDate}}</p>
-                <h3>Date du premier album</h3>
+                <h3>First Album</h3>
                 <p>{{ .FirstAlbum}}</p>
-                <a href="/events?oneGroup={{.ID}}"><button>Voir les concerts.</button></a>
+                <a href="/events?oneGroup={{.ID}}"><button>View concerts.</button></a>
             </div>
             {{end}}
             {{else}}
-            <p>Pas d'artistes trouvés avec les filtres.</p>
+            <p>Artists not found with filters.</p>
             {{end}}
             
             

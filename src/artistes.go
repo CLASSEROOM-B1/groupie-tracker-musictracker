@@ -48,7 +48,7 @@ func Artistes(w http.ResponseWriter, req *http.Request) {
 		tabMembers = append(tabMembers, member)
 	}
 
-	// Importation de tous les groupes + tri des groupes par nom
+	// Import de tous les groupes + trie des groupes par nom
 	groups := data.GetGroups()
 	sort.SliceStable(groups, func(i, j int) bool {
 		return groups[i].Name < groups[j].Name
@@ -64,7 +64,7 @@ func Artistes(w http.ResponseWriter, req *http.Request) {
 		fmt.Printf("Années : %s\n", creationDate)
 		fmt.Printf("Album : %s\n", firstAlbum)
 
-		// Boucle sur les membres, on voit lesquels sont checked ou pas
+		// Boucle sur les membres, on voit lesquels sont cochéS ou non
 		var counterUnchecked = 0
 		for j := 1; j <= nbMembersMax; j++ {
 			n := strconv.Itoa(j)
@@ -77,7 +77,7 @@ func Artistes(w http.ResponseWriter, req *http.Request) {
 		}
 		fmt.Printf("Membres : %v\n", tabMembers)
 
-		// TRI PAR MEMBRES
+		// TRIE PAR MEMBRES
 		if counterUnchecked != 8 {
 			// On va chercher le nombre de membres par groupe
 			for k := range groups {
@@ -93,7 +93,6 @@ func Artistes(w http.ResponseWriter, req *http.Request) {
 			// Si aucune checkbox n'a été cochée, le tableau des groupes reste inchangé
 			tabGroups = groups
 		}
-		// TRI PAR MEMBRES FINI
 
 		// TRI PAR CREATION DATE
 		yearStartCD, _ := strconv.Atoi(creationDate.Start)
@@ -108,7 +107,6 @@ func Artistes(w http.ResponseWriter, req *http.Request) {
 			}
 		}
 		tabGroups = tabGroups2
-		//CREATION DATE FINI
 
 		// TRI PAR FIRST ALBUM
 		yearStartFA, _ := strconv.Atoi(firstAlbum.Start)

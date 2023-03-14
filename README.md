@@ -35,4 +35,4 @@ Lancement du serveur :
 
 Pour lancer le serveur, il vous suffit d'utiliser la commande suivante dans votre terminal : go run server.go
 
-Technical Stack: Golang, HTML/CSS, JS
+Technical Stack: Golang, HTML/CSS, JS.

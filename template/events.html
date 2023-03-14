@@ -14,7 +14,7 @@
     {{template "header"}}
     <main>
         
-        <h1>Événements</h1>
+        <h1>Events</h1>
         
         <form action="/events?oneGroup=" id="formSearch" method="POST">
             
@@ -22,7 +22,7 @@
                 <input placeholder="Recherchez un artiste/groupe..." name="search" list="allData" type="search" id="search_bar" value="{{.ValueSearch}}">
                 <datalist id="allData">
                     {{range .Groups}}
-                    <option value="{{.Name}}">| Groupe</option>
+                    <option value="{{.Name}}">| Group</option>
                     {{end}}
                     {{range .Groups}}
                     {{range .Members}}
@@ -31,7 +31,7 @@
                     {{end}}
                 </datalist>
             </div>
-            <button type="submit">Rechercher</button>
+            <button type="submit">Search</button>
         </form>
         
         
@@ -58,7 +58,7 @@
             <div class="group_event">
                 
                 <div class="groupPres">
-                    <h2>{{.ThisGroup.Name}} en concert ! </h2>
+                    <h2>{{.ThisGroup.Name}} in concert ! </h2>
                     
                     <img src="{{.ThisGroup.Image}}" alt="Image du groupe {{.ThisGroup.Name}}">
                 </div>

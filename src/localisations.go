@@ -42,8 +42,8 @@ func Locations(w http.ResponseWriter, req *http.Request) {
 
 func ConcertsLocations(w http.ResponseWriter, req *http.Request) {
 
-	indexGroup := req.FormValue("groups") // on récupère l'index de ce que nous retourne la valeur de" groups"
-	cities := data.GetCity(indexGroup)    // récupere grace a la fonction getCity la valeurs des villes grâce a l'index
+	indexGroup := req.FormValue("groups") // récupèration de l'index de ce que nous retourne la valeur de "groups"
+	cities := data.GetCity(indexGroup)    // récupèration grâce à la fonction getCity la valeurs des villes grâce a l'index
 
 	jsonData, _ := json.Marshal(cities) // mettre ses données sous formats JSON
 

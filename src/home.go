@@ -6,7 +6,7 @@ import ( //Importation des librairies nécessaire
 	"text/template"
 )
 
-func Accueil(w http.ResponseWriter, req *http.Request) { //fonction de qui affiche la page Accueil
+func Accueil(w http.ResponseWriter, req *http.Request) { //fonction de qui affiche la page Home
 
 	const path = "./template/home.html"
 

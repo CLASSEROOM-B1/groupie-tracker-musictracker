@@ -1,3 +1,9 @@
 .presentation {
+  justify-content: center;
   text-align:center;
-} 
+}
+body{
+  background-image: url(static/img/icon.png);
+  width: auto;
+  height: auto;
+}

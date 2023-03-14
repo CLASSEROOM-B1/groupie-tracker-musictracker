@@ -1,6 +1,6 @@
 header {
     overflow: hidden;
-    background-color: #537c53;
+    background-color: #496a49;
     height: 40%;
     width: 100%;
 }
@@ -11,7 +11,7 @@ header a {
     float: left;
     text-align: center;
     padding: 12px;
-    text-decoration: rgb(23, 49, 20);
+    text-decoration: rgb(24, 241, 0);
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
@@ -29,14 +29,16 @@ header div {
 
 
 }
-
+#boutons :hover {
+    color: #9bd49b
+}
 #boutons {
     width: 100%;
     font-size: 250%;
     border-radius: 10px;
     /* border: none; */
-    background-color: #537c53;
-    color: rgb(16, 51, 15);
+    background-color: #527a52;
+    color: #496a49;
     text-align: center;
 }
 
@@ -67,14 +69,14 @@ nav {
 }
 
 .loader span {
-    color: #31633a;
+    color: #496a49;
     text-shadow: 0 0 0 #4a453f;
     -webkit-animation: loading 1s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes loading {
     to {
-        text-shadow: 20px 0 70px #25492a;
+        text-shadow: 20px 0 70px #7aa17f;
         color: #02ff0f;
     }
 }
@@ -178,4 +180,7 @@ h1 {
 h1:hover {
     transform: translate3d(0, -10px, 22px);
     color: #56cd74;
+}
+h1{
+    font-size: 250%;
 }
