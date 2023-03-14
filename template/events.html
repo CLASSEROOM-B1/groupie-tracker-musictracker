@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/css/events.css">
+        <link rel="shortcut icon" href="/static/img/logo.ico" type="image/x-icon">
+        <meta charset="UTF-8">
+        <title>MUSIC TRACKER</title>
+    </head>
+
+<body> 
+    {{template "header"}}
+    <main>
+        
+        <h1>Événements</h1>
+        
+        <form action="/events?oneGroup=" id="formSearch" method="POST">
+            
+            <div id="searchBar">
+                <input placeholder="Recherchez un artiste/groupe..." name="search" list="allData" type="search" id="search_bar" value="{{.ValueSearch}}">
+                <datalist id="allData">
+                    {{range .Groups}}
+                    <option value="{{.Name}}">| Groupe</option>
+                    {{end}}
+                    {{range .Groups}}
+                    {{range .Members}}
+                    <option value="{{.}}">| Member</option>
+                    {{end}}
+                    {{end}}
+                </datalist>
+            </div>
+            <button type="submit">Rechercher</button>
+        </form>
+        
+        
+        <div class="pageEvents">
+            {{ if .GroupsFound }}
+            
+            <div class="liste">
+                <h2>Cliquez sur le groupe que vous recherchez.</h2>
+                {{range .GroupsFound}}
+                <button onclick="displayGroup('{{.ID}}')" name="oneGroup" value="{{.ID}}" class="oneGroup">
+                    <h2> {{ .Name}}</h2>
+                    <h3>Membres</h3>
+                    <p> |
+                        {{range $member := .Members}}
+                        <span> {{$member}} |</span>
+                        {{end}}
+                    </p>
+                </button>
+                {{end}}
+                
+            </div>
+            {{end}}
+            {{ if .Concert }}
+            <div class="group_event">
+                
+                <div class="groupPres">
+                    <h2>{{.ThisGroup.Name}} en concert ! </h2>
+                    
+                    <img src="{{.ThisGroup.Image}}" alt="Image du groupe {{.ThisGroup.Name}}">
+                </div>
+                
+                <div class="allConcerts">
+                    {{range .Concert}}
+                    
+                    <div class="flip">
+                        <div class="front">
+                            <h3>{{.City}}</h3>
+                            <p>{{.Country}}</p>
+                        </div>
+                        <div class="back">
+                            <p>Dates</p>
+                            {{range $date:=.Dates}}
+                            <p>{{ $date }}</p>
+                            {{end}}
+                        </div>
+                    </div>
+                    {{end}}
+                    
+                </div>
+                
+                
+            </div>
+            {{end}}
+            
+        </div>
+        
+        
+        
+    </main>
+</body>
+
+<script src="../static/js/events.js"></script>  
+</html>

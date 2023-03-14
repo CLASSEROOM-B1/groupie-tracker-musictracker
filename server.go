@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	fmt.Print("Server started... 🎸\n")
+	fmt.Print("Démarrage du serveur...🎸")
 
 	// Récupération des fichiers static pour l'affichage des pages
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))

@@ -1,5 +1,4 @@
 # groupie-tracker-musictracker
-# groupie-tracker-musictracker
 
 Le projet Groupie Tracker consiste à recevoir une API donnée et manipuler les données qu'elle contenait. L'objectif étant de réaliser un site web et d'y afficher un certain nombre de donnée venant de l'API.
 

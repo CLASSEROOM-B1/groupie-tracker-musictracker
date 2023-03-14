@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/css/map.css">
+        <link rel="shortcut icon" href="/static/img/logo.ico" type="image/x-icon">
+        <meta charset="UTF-8">
+        <title>MUSIC TRACKER</title>
+    </head>
+
+<body>
+    {{template "header"}}
+    <main>
+            <h1>Locations</h1>
+        
+        <br>
+        <form method="POST">
+            <select class="liste" id ="city"> 
+                <option value ="1" selected >Select your artist</option>
+                {{ if .Groups }}
+                {{ range .Groups }}
+                <option name="groups" value={{.ID}} class="groups" >{{.Name}}</option>
+                {{end}}
+                {{end}}
+            </select>
+        </form>
+        <br>
+        <div id = "all_body">
+            <div id ="title_map">
+                <h2>Map :</h2>
+                <div id="map">Google Maps</div>
+            </div>
+            
+            <div id ="city_content">
+                <h2>Les concerts de votre artiste :</h2>
+                <div id="villes_artistes"></div>
+            </div>
+            
+        </div>
+        
+        
+        
+        <script src="/static/js/map.js" defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE7V4koSwqKCgcM7d1dHtm63ufUVHgpIA&callback=initMap&libraries=&v=weekly"
+        defer
+        ></script> 
+    </main>
+</body>
+</html>     
